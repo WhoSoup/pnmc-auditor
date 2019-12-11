@@ -22,9 +22,9 @@ func main() {
 	data = append(data, content...)
 
 	// verify the signature
-	fmt.Println(ed25519.Verify(pubkey, data, signature))
+	fmt.Println("Signature valid?", ed25519.Verify(pubkey, data, signature))
 
 	// verify the time
 	fmt.Println("Local timezone:", time.Unix(1576061423, 0))
-	fmt.Println("UTC", time.Unix(1576061423, 0).UTC())
+	fmt.Println("           UTC:", time.Unix(1576061423, 0).UTC())
 }
